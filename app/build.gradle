@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace 'com.mrx.indoornavigationsamplejava'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.mrx.indoornavigationsamplejava"
@@ -29,6 +29,12 @@ android {
 }
 
 dependencies {
+    implementation files('libs/app-debug.aar')
+    implementation files('libs/data-debug.aar')
+    implementation files('libs/domain-debug.aar')
+
+    implementation 'org.altbeacon:android-beacon-library:2.19.5' // https://altbeacon.github.io/android-beacon-library
+    implementation 'com.lemmingapex.trilateration:trilateration:1.0.2'
 
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
