@@ -7,9 +7,6 @@
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN"/>
-    <!-- Ниже это необходимо только в том случае, если вы хотите прочитать имя устройства или установить соединение Bluetooth
-    -->
-    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
 
     <application
         android:allowBackup="true"
