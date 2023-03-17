@@ -20,6 +20,8 @@ import java.util.Collection;
 
 public class MainActivity extends AppCompatActivity {
 
+    // Обьявим переменные в классе MainActivity
+
     BeaconManager beaconManager;
     Region region;
 
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
          * После первого запуска необходимо дать разрешение приложению на местоположение в настройках, иначе маяки не найдет
          */
 
-        //
+        // Подпишемся на обновление данных с маячков и запустим мониторинг
 //        region = new Region("all-beacons-region", null, null, null);
 //        beaconManager.getRegionViewModel(region).getRangedBeacons().observe(this, observer);
 //
@@ -69,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    // Напишем функцию обратного вызова
     Observer<Collection<Beacon>> observer = beacons -> {
         textViewBeacons.setText("Ranged: " + Integer.toString(beacons.size()) + " beacons");
     };
@@ -85,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
 
-//        beaconManager.startMonitoring(region);
+//        beaconManager.stopMonitoring(region);
         indoorService.getBeaconsEnvironment().stopRanging();
         indoorService.getAzimuthManager().stopListen();
     }
